@@ -26,29 +26,32 @@
       </Header>
       <Layout>
         <Sider hide-trigger :style="{background: '#fff'}">
-          <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']" @on-select="breadRoute">
+          <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
             <Submenu name="1">
               <template slot="title">
                 <Icon type="ios-navigate"></Icon>
-                首页
+                小例子
               </template>
-              <MenuItem name="首页" @click.native="route('/')">首页</MenuItem>
+              <MenuItem name="1-1" v-on:click.native="route('/example/paging')">分页</MenuItem>
+              <MenuItem name="1-2">Option 2</MenuItem>
+              <MenuItem name="1-3">Option 3</MenuItem>
+              <MenuItem name="1-4">Option 4</MenuItem>
             </Submenu>
             <Submenu name="2">
               <template slot="title">
-                <Icon type="ios-navigate"></Icon>
-                账号管理
+                <Icon type="ios-keypad"></Icon>
+                Item 2
               </template>
-              <MenuItem name="账号管理/账号列表" @click.native="route('/adminUserList')">账号列表</MenuItem>
-              <MenuItem name="账号管理/权限管理" @click.native="route('/adminPermission')">权限管理</MenuItem>
-              <MenuItem name="账号管理/角色配置" @click.native="route('/roleConfig')">角色配置</MenuItem>
+              <MenuItem name="2-1">Option 1</MenuItem>
+              <MenuItem name="2-2">Option 2</MenuItem>
             </Submenu>
             <Submenu name="3">
               <template slot="title">
                 <Icon type="ios-analytics"></Icon>
-                数据统计
+                Item 3
               </template>
-              <MenuItem name="数据统计/充值升级记录" @click.native="route('/rechargeOrder')">充值/升级记录</MenuItem>
+              <MenuItem name="3-1">Option 1</MenuItem>
+              <MenuItem name="3-2">Option 2</MenuItem>
             </Submenu>
             <Submenu name="4">
               <template slot="title">
@@ -83,15 +86,12 @@
     name: 'homePage',
     data () {
       return {
-        breadcrumb: ['清衣舍管理后台']    // 面包屑导航
+        breadcrumb: ['Home', 'Components', 'Layout']    // 面包屑导航
       }
     },
     methods: {
       route: function (urlPath) {
         this.$router.push(urlPath)
-      },
-      breadRoute: function (name) {
-        this.breadcrumb = name.split('/')
       }
     }
   }

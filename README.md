@@ -1,4 +1,4 @@
-# washer
+# vue project
 
 > A Vue.js project
 
@@ -7,8 +7,9 @@
 ``` bash
 # install dependencies
 npm install
+npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver 
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8089
 npm run dev
 
 # build for production with minification
